@@ -1,0 +1,39 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color: #000000;
+}
+
+.razor {
+    color: #ffffff;
+    background-color: #000000;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.text {
+    color: #000000;
+}
+
+textarea {
+    resize: none;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+
+@media (max-width: 768px) {
+    .razor {
+        margin: 20px;
+        padding: 15px;
+    }
+    textarea, button {
+        width: 100%;
+    }
+}
