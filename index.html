@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en_US">
 <head>
-<title>@</title>
+    <title></title>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const text = "3feds";
@@ -12,13 +12,13 @@
             function typeWriter() {
                 const currentTitle = document.title;
                 if (isDeleting) {
-                    document.title = currentTitle.substring(0, currentTitle.length - 1);
-                    if (currentTitle.length === 0) {
+                    document.title = currentTitle.substring(0, currentTitle.length - 1) || " "; // Set to a single space instead of empty
+                    if (currentTitle.length === 1) { // Adjust this to check for one character instead of empty
                         isDeleting = false;
                         index = 0;
                     }
                 } else {
-                    document.title = currentTitle + text.charAt(index);
+                    document.title = currentTitle.trim() + text.charAt(index);
                     index++;
                     if (index === text.length) {
                         isDeleting = true;
@@ -30,15 +30,15 @@
             typeWriter();
         });
     </script>
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-<meta name="theme-color" content="#2a1e37">
-<meta property="og:url" content="https://3feds.lol" />
-<meta property="og:title" content="kamikaze" />
-<meta property="og:image" content="./assets/reversexenowo.png" />
-<meta property="og:description" content="@kamikaze" />
-<link rel="shortcut icon" type="image/png" href="./assets/fraudstar.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="mobiledetection.js"></script>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta name="theme-color" content="#2a1e37">
+    <meta property="og:url" content="https://3feds.lol" />
+    <meta property="og:title" content="kamikaze" />
+    <meta property="og:image" content="./assets/reversexenowo.png" />
+    <meta property="og:description" content="@kamikaze" />
+    <link rel="shortcut icon" type="image/png" href="./assets/fraudstar.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="mobiledetection.js"></script>
 </head>
 <style>
     a,
