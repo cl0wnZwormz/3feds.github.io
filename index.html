@@ -1,7 +1,35 @@
 <!DOCTYPE html>
 <html lang="en_US">
 <head>
-<title> kamikaze </title>
+<title></title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const text = "3feds";
+            let index = 0;
+            let isDeleting = false;
+            const speed = 200; // typing and deleting speed in milliseconds
+
+            function typeWriter() {
+                const currentTitle = document.title;
+                if (isDeleting) {
+                    document.title = currentTitle.substring(0, currentTitle.length - 1);
+                    if (currentTitle.length === 0) {
+                        isDeleting = false;
+                        index = 0;
+                    }
+                } else {
+                    document.title = currentTitle + text.charAt(index);
+                    index++;
+                    if (index === text.length) {
+                        isDeleting = true;
+                    }
+                }
+                setTimeout(typeWriter, speed);
+            }
+
+            typeWriter();
+        });
+    </script>
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <meta name="theme-color" content="#2a1e37">
 <meta property="og:url" content="https://3feds.lol" />
