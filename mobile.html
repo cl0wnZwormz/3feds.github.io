@@ -2,7 +2,38 @@
 <!DOCTYPE html>
 <html lang="en_US">
 <head>
-<title> csyn.me </title>
+<title>@</title>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const fixedText = "@";
+        const typeText = "3feds";
+        let index = 0;
+        let isDeleting = false;
+        const speed = 350; // typing and deleting speed in milliseconds
+
+        function typeWriter() {
+            const currentTitle = document.title;
+            const dynamicPart = currentTitle.slice(fixedText.length);
+              
+            if (isDeleting) {
+                document.title = fixedText + dynamicPart.substring(0, dynamicPart.length - 1);
+                if (dynamicPart.length === 0) {
+                    isDeleting = false;
+                    index = 0;
+                }
+            } else {
+                document.title = fixedText + typeText.substring(0, index + 1);
+                index++;
+                if (index === typeText.length) {
+                    isDeleting = true;
+                }
+            }
+            setTimeout(typeWriter, speed);
+        }
+
+        typeWriter();
+    });
+  </script>
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <meta name="theme-color" content="#2a1e37">
 <meta property="og:url" content="https://3feds.lol" />
