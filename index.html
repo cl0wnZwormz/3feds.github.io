@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en_US">
+
 <head>
     <title>@</title>
     <style>
@@ -16,7 +17,7 @@
             function typeWriter() {
                 const currentTitle = document.title;
                 const dynamicPart = currentTitle.slice(fixedText.length);
-                
+
                 if (isDeleting) {
                     document.title = fixedText + dynamicPart.substring(0, dynamicPart.length - 1);
                     if (dynamicPart.length === 0) {
@@ -51,40 +52,43 @@
     a:visited {
         color: #aab4ff;
     }
+    
     body {
         background-color: rgb(15, 15, 15);
         color: white;
         display: flex;
-        align-items: center; 
-        justify-content: center; 
-        height: 100vh; 
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
         margin: 0;
         user-select: none;
     }
+    
     balls-skibidi-toaleta {
         color: #c2a3b2;
     }
+    
     .enter-screen {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 1);
-            color: white;
-            cursor: pointer;
-            z-index: 10;
-            transition: opacity 0.5s ease;
-        }
-        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 1);
+        color: white;
+        cursor: pointer;
+        z-index: 10;
+        transition: opacity 0.5s ease;
+    }
+    
     .enter-screen.hidden {
         opacity: 0;
         visibility: hidden;
     }
-        
+    
     .enter-screen h1 {
         font-size: 32px;
         font-family: "Roboto Condensed", sans-serif;
@@ -92,19 +96,22 @@
         font-weight: 20000;
         font-style: normal;
     }
+    
     .white-dot {
         color: white;
     }
+    
     footer {
         position: fixed;
         bottom: 0;
         right: 0;
         margin: 20px;
     }
+    
     footer a {
         color: #ddddff50;
         text-decoration: none;
-    } 
+    }
 </style>
 <div class="enter-screen" onclick="enter()">
     <h1>click to enter</h1>
@@ -124,12 +131,16 @@
 <center> <samp></span> <a href="https://3feds.lol/projects">projects</a> <span class="white-dot">•</span> <a href="https://t.me/kamikazebaa">telegram</a> •</span> <a href="https://github.com/cl0wnZwormz">github</a> </samp> </center>
 
 </pre>
-<footer> <a style="color: #ddddff50; text-decoration: none;" href="https://guns.lol/hardsex"><3</a> </footer>
+<footer>
+    <a style="color: #ddddff50; text-decoration: none;" href="https://guns.lol/hardsex">
+        <3</a>
+</footer>
 <fixpos style="color: transparent !important;"> s </fixpos>
 
 <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
 <script>
     const enterScreen = document.querySelector('.enter-screen');
+
     function enter() {
         enterScreen.classList.add('hidden');
         kofiWidgetOverlay.draw('sillyfemboy', {
@@ -142,13 +153,14 @@
         audio.controls = true;
         audio.autoplay = true;
         audio.loop = true;
-        audio.volume = 0.05; 
+        audio.volume = 0.05;
         var source = document.createElement('source');
         source.src = 'music.mp3';
         source.type = 'audio/mpeg';
         audio.appendChild(source);
         audio.style.display = 'none';
         document.body.appendChild(audio);
-    } 
+    }
 </script>
+
 </html>
