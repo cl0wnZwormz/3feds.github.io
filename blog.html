@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNTOLD Festival Blog</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+      line-height: 1.8;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e5e7eb;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #7c3aed;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #374151;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #7c3aed;
+    }
+
+    .hero {
+      height: 75vh;
+      background: linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.7)),
+      url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      animation: fadeIn 1s ease;
+    }
+
+    .hero-content h1 {
+      font-size: 4.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 70px auto;
+    }
+
+    .blog-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+    }
+
+    .main-post {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    }
+
+    .main-post img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+    }
+
+    .post-content {
+      padding: 40px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #ede9fe;
+      color: #7c3aed;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .post-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #111827;
+    }
+
+    .post-content p {
+      margin-bottom: 22px;
+      color: #4b5563;
+      font-size: 1rem;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .sidebar-card {
+      background: white;
+      padding: 30px;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .sidebar-card h3 {
+      margin-bottom: 18px;
+      color: #111827;
+    }
+
+    .sidebar-card p,
+    .sidebar-card li {
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+
+    .sidebar-card ul {
+      padding-left: 18px;
+    }
+
+    .quote {
+      background: linear-gradient(135deg, #7c3aed, #4f46e5);
+      color: white;
+      padding: 30px;
+      border-radius: 24px;
+      margin-top: 40px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      box-shadow: 0 15px 35px rgba(124,58,237,0.25);
+    }
+
+    footer {
+      background: #111827;
+      color: #d1d5db;
+      text-align: center;
+      padding: 50px 20px;
+      margin-top: 80px;
+    }
+
+    footer h3 {
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .blog-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+
+      .post-content h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <div class="logo">UNTOLD Blog</div>
+
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Articles</a>
+        <a href="#">Festivals</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>The UNTOLD Experience Through My Eyes</h1>
+
+      <p>
+        A blog dedicated to music, unforgettable energy,
+        and magical moments from one of Europe's biggest festivals.
+      </p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="blog-layout">
+
+      <div>
+        <article class="main-post">
+
+          <img
+            src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=1600&auto=format&fit=crop"
+            alt="UNTOLD Festival">
+
+          <div class="post-content">
+
+            <span class="tag">PERSONAL BLOG</span>
+
+            <h2>Why UNTOLD Is More Than Just a Festival</h2>
+
+            <p>
+              I’ve been to many festivals over the years,
+              but UNTOLD has a completely different kind of energy.
+              Every time I arrive in Cluj and step into the stadium,
+              it feels like entering another world.
+              The lights, the music, and the people create an atmosphere
+              that you truly cannot understand until you experience it yourself.
+            </p>
+
+            <p>
+              What I love most is the perfect combination of incredible production
+              and the amazing vibe of the crowd.
+              Whether you come for the world-famous DJs or simply for the experience,
+              the festival manages to make you forget reality for a few unforgettable days.
+            </p>
+
+            <p>
+              Every year I write down my favorite moments in this blog:
+              the best live sets, breathtaking stages,
+              creative festival outfits,
+              and the unforgettable nightlife atmosphere of Cluj.
+            </p>
+
+            <div class="quote">
+              “UNTOLD is not only about music.
+              It’s about emotions, people,
+              and memories that stay with you long after the festival ends.”
+            </div>
+
+          </div>
+        </article>
+      </div>
+
+      <aside class="sidebar">
+
+        <div class="sidebar-card">
+          <h3>About Me</h3>
+
+          <p>
+            I’m passionate about music festivals,
+            electronic music,
+            and unforgettable live experiences.
+            This blog is where I share my stories,
+            thoughts, and favorite memories from UNTOLD.
+          </p>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>Popular Articles</h3>
+
+          <ul>
+            <li>Top 5 UNTOLD Moments</li>
+            <li>How to Prepare for the Festival</li>
+            <li>The Best Stages and Artists</li>
+            <li>Cluj’s Incredible Night Atmosphere</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>Festival Vibes</h3>
+
+          <p>
+            Music. Lights. Energy.
+            UNTOLD is the experience you wait for all year long.
+          </p>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+  <footer>
+    <h3>UNTOLD Blog © 2026</h3>
+    <p>Written with passion for the UNTOLD community.</p>
+  </footer>
+
+</body>
+</html>

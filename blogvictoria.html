@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Perfect Day at the Beach</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      line-height: 1.9;
+    }
+
+    .hero {
+      height: 70vh;
+      background:
+        linear-gradient(rgba(15,23,42,0.45), rgba(15,23,42,0.45)),
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+      display: flex;
+      align-items: end;
+      padding: 80px;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .category {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: 4.5rem;
+      line-height: 1;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .blog-container {
+      width: 90%;
+      max-width: 900px;
+      margin: auto;
+      margin-top: -70px;
+    }
+
+    .blog-post {
+      background: white;
+      border-radius: 32px;
+      padding: 60px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    }
+
+    .author {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .author img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .author-info h4 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .author-info span {
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    .blog-post p {
+      margin-bottom: 28px;
+      color: #334155;
+      font-size: 1.08rem;
+    }
+
+    .blog-post h2 {
+      font-size: 2rem;
+      margin: 50px 0 20px;
+      color: #0f172a;
+    }
+
+    .inline-image {
+      width: 100%;
+      border-radius: 24px;
+      margin: 40px 0;
+      height: 420px;
+      object-fit: cover;
+    }
+
+    .quote {
+      margin: 50px 0;
+      padding: 40px;
+      border-left: 5px solid #0ea5e9;
+      background: #f0f9ff;
+      border-radius: 20px;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .tags {
+      margin-top: 50px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      background: #e0f2fe;
+      color: #0284c7;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      color: #64748b;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 40px 25px;
+        height: 60vh;
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .blog-post {
+        padding: 35px 25px;
+      }
+
+      .quote {
+        font-size: 1.1rem;
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-content">
+      <span class="category">TRAVEL BLOG</span>
+
+      <h1>A Perfect Day at the Beach</h1>
+
+      <p>
+        Thoughts, moments, and memories from the most relaxing summer day spent by the sea.
+      </p>
+    </div>
+  </section>
+
+  <div class="blog-container">
+    <article class="blog-post">
+
+      <div class="author">
+        <img src="https://thumbs.dreamstime.com/b/two-little-girls-hugging-55893017.jpg">
+
+        <div class="author-info">
+          <h4>Victoria And Flori</h4>
+          <span>Published on May 15, 2026 · 6 min read</span>
+        </div>
+      </div>
+
+      <p>
+        Sometimes, all you need is a simple beach day to forget about all the stress. No complicated plans, no notifications, and no rushing. Just sunshine, waves, and peace.
+      </p>
+
+      <p>
+        I arrived early in the morning, before the beach became crowded. The air was cool, and the sound of the waves made everything feel incredibly calm. I grabbed a coffee and walked straight toward the ocean.
+      </p>
+
+      <img class="inline-image" src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=1400&auto=format&fit=crop" alt="Beach Morning">
+
+      <h2>The Small Moments Matter Most</h2>
+
+      <p>
+        I think that’s what I love most about the beach. You don’t need to do anything special to feel good. You can simply sit on the sand, listen to music, and watch the ocean for hours.
+      </p>
+
+      <p>
+        By evening, the sky started turning shades of orange and pink. The whole atmosphere changed. People talked more quietly, music drifted from the beach bars, and the sunset looked like something out of a movie.
+      </p>
+
+      <div class="quote">
+        “The ocean has a strange way of making everything feel simpler.”
+      </div>
+
+      <img class="inline-image" src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1400&auto=format&fit=crop" alt="Ocean Sunset">
+
+      <p>
+        When I left, I was tired, slightly sunburned, and covered in sand — but honestly, I hadn’t felt that relaxed in a very long time.
+      </p>
+
+      <p>
+        I think this summer I’ll try to spend more time in places that make me slow down and enjoy the moment.
+      </p>
+
+      <div class="tags">
+        <span class="tag">#beach</span>
+        <span class="tag">#summer</span>
+        <span class="tag">#travelblog</span>
+        <span class="tag">#ocean</span>
+      </div>
+
+    </article>
+  </div>
+
+  <footer>
+    © 2026 · Travel Journal
+  </footer>
+
+</body>
+</html>
