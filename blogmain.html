@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Electric Castle Blog Post</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Space Grotesk',sans-serif;
+      background:#0b0b0f;
+      color:#f3f4f6;
+      line-height:1.9;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:
+      radial-gradient(circle at top left, rgba(255,0,128,0.12), transparent 35%),
+      radial-gradient(circle at bottom right, rgba(0,247,255,0.12), transparent 35%);
+      z-index:-1;
+    }
+
+    .topbar{
+      width:100%;
+      padding:24px 0;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(10,10,10,0.7);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .topbar-content{
+      width:90%;
+      max-width:1100px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-size:1.2rem;
+      text-transform:uppercase;
+      letter-spacing:3px;
+      font-weight:700;
+      color:#00f7ff;
+    }
+
+    .nav a{
+      color:#d1d5db;
+      text-decoration:none;
+      margin-left:25px;
+      transition:0.3s;
+      font-size:0.95rem;
+    }
+
+    .nav a:hover{
+      color:#ff3cac;
+    }
+
+    .hero{
+      width:90%;
+      max-width:1100px;
+      margin:80px auto 60px;
+    }
+
+    .hero-image{
+      position:relative;
+      border-radius:32px;
+      overflow:hidden;
+      box-shadow:0 30px 80px rgba(0,0,0,0.45);
+    }
+
+    .hero-image img{
+      width:100%;
+      height:600px;
+      object-fit:cover;
+      filter:brightness(0.7);
+    }
+
+    .hero-overlay{
+      position:absolute;
+      bottom:0;
+      left:0;
+      padding:60px;
+      width:100%;
+      background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    }
+
+    .category{
+      display:inline-block;
+      padding:8px 18px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.1);
+      backdrop-filter:blur(10px);
+      color:#00f7ff;
+      font-size:0.8rem;
+      letter-spacing:1px;
+      margin-bottom:20px;
+    }
+
+    .hero-overlay h1{
+      font-size:4.5rem;
+      line-height:1;
+      margin-bottom:20px;
+      max-width:700px;
+    }
+
+    .hero-overlay p{
+      max-width:700px;
+      color:#d1d5db;
+      font-size:1.1rem;
+    }
+
+    .blog-container{
+      width:90%;
+      max-width:1100px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:2fr 1fr;
+      gap:50px;
+      margin-bottom:100px;
+    }
+
+    .post{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:50px;
+      border-radius:32px;
+      backdrop-filter:blur(12px);
+    }
+
+    .post p{
+      margin-bottom:28px;
+      color:#d1d5db;
+      font-size:1.05rem;
+    }
+
+    .post h2{
+      margin:50px 0 25px;
+      font-size:2rem;
+      color:white;
+    }
+
+    .quote{
+      margin:50px 0;
+      padding:40px;
+      border-radius:28px;
+      background:linear-gradient(135deg,
+      rgba(255,60,172,0.2),
+      rgba(0,247,255,0.15));
+      border:1px solid rgba(255,255,255,0.08);
+      font-size:1.4rem;
+      font-weight:500;
+      line-height:1.6;
+    }
+
+    .sidebar{
+      display:flex;
+      flex-direction:column;
+      gap:25px;
+    }
+
+    .sidebar-card{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:28px;
+      padding:30px;
+      backdrop-filter:blur(12px);
+    }
+
+    .sidebar-card h3{
+      margin-bottom:18px;
+      color:white;
+    }
+
+    .sidebar-card p,
+    .sidebar-card li{
+      color:#cbd5e1;
+      font-size:0.95rem;
+    }
+
+    .sidebar-card ul{
+      padding-left:18px;
+    }
+
+    .author{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      margin-top:40px;
+      padding-top:30px;
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    .author img{
+      width:70px;
+      height:70px;
+      border-radius:50%;
+      object-fit:cover;
+    }
+
+    .author h4{
+      margin-bottom:4px;
+    }
+
+    footer{
+      text-align:center;
+      padding:60px 20px;
+      border-top:1px solid rgba(255,255,255,0.08);
+      color:#9ca3af;
+    }
+
+    footer h3{
+      color:white;
+      margin-bottom:10px;
+    }
+
+    @media(max-width:900px){
+
+      .blog-container{
+        grid-template-columns:1fr;
+      }
+
+      .hero-overlay{
+        padding:35px;
+      }
+
+      .hero-overlay h1{
+        font-size:2.8rem;
+      }
+
+      .hero-image img{
+        height:500px;
+      }
+
+      .post{
+        padding:35px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+
+    <div class="topbar-content">
+
+      <div class="logo">Electric Castle Journal</div>
+
+      <div class="nav">
+        <a href="#">Blog</a>
+        <a href="#">Festivals</a>
+        <a href="#">Gallery</a>
+        <a href="#">Contact</a>
+      </div>
+
+    </div>
+
+  </header>
+
+  <section class="hero">
+
+    <div class="hero-image">
+
+      <img
+        src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1600&auto=format&fit=crop"
+        alt="Electric Castle Festival">
+
+      <div class="hero-overlay">
+
+        <span class="category">FESTIVAL EXPERIENCE</span>
+
+        <h1>
+          Why Electric Castle Feels Like Another Universe
+        </h1>
+
+        <p>
+          A personal story about music, muddy sneakers,
+          sleepless nights, neon lights,
+          and the unforgettable atmosphere of Electric Castle.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="blog-container">
+
+    <article class="post">
+
+      <p>
+        The first thing you notice at Electric Castle is that it doesn’t feel like a normal festival.
+        The moment you arrive at Banffy Castle,
+        everything around you feels cinematic —
+        from the giant stages hidden between old buildings
+        to the colorful lights reflecting through the night fog.
+      </p>
+
+      <p>
+        Unlike other festivals,
+        Electric Castle has this chaotic but beautiful energy.
+        One moment you’re dancing in front of thousands of people,
+        and the next you’re sitting on wet grass at 4 AM,
+        listening to music echo through the castle walls.
+      </p>
+
+      <h2>The Rain Became Part of the Experience</h2>
+
+      <p>
+        Everyone talks about the rain at Electric Castle,
+        but honestly,
+        that’s part of what makes it unforgettable.
+        Muddy shoes, soaked jackets,
+        and random storms somehow make the festival feel even more alive.
+      </p>
+
+      <p>
+        Nobody really cares about perfect outfits after a few hours.
+        People dance anyway,
+        laugh anyway,
+        and continue the night like the weather is just another stage effect.
+      </p>
+
+      <div class="quote">
+        “Electric Castle isn’t perfect —
+        and that’s exactly why people fall in love with it.”
+      </div>
+
+      <h2>The Nights Feel Endless</h2>
+
+      <p>
+        The best memories always happen after midnight.
+        The lights become brighter,
+        the music feels louder,
+        and the castle transforms into something surreal.
+      </p>
+
+      <p>
+        Some of my favorite moments were never even planned:
+        discovering hidden stages,
+        meeting strangers from different countries,
+        or watching sunrise while exhausted and completely happy.
+      </p>
+
+      <p>
+        Electric Castle is more than a music festival.
+        It’s a mix of freedom,
+        art,
+        chaos,
+        friendship,
+        and moments that stay with you long after summer ends.
+      </p>
+
+      <div class="author">
+
+        <img
+          src="https://images.steamusercontent.com/ugc/2009198719970891388/40B7EA49F19ACE1387BF24DC7E9A9DC6E9693776/?imw=512&imh=288&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"
+          alt="Author">
+
+        <div>
+          <h4>Written by David And Vlad</h4>
+          <p>Festival lovers & live music storytellers</p>
+        </div>
+
+      </div>
+
+    </article>
+
+    <aside class="sidebar">
+
+      <div class="sidebar-card">
+
+        <h3>About This Blog</h3>
+
+        <p>
+          A personal space dedicated to festival memories,
+          electronic music,
+          and unforgettable summer experiences across Romania.
+        </p>
+
+      </div>
+
+      <div class="sidebar-card">
+
+        <h3>Popular Posts</h3>
+
+        <ul>
+          <li>Top 10 Electric Castle Moments</li>
+          <li>How To Survive Festival Rain</li>
+          <li>Best Late-Night Stages</li>
+          <li>Why Cluj Festivals Feel Different</li>
+        </ul>
+
+      </div>
+
+      <div class="sidebar-card">
+
+        <h3>Festival Mood</h3>
+
+        <p>
+          Neon lights.
+          Bass vibrations.
+          Castle walls.
+          Rainy mornings.
+          Endless nights.
+        </p>
+
+      </div>
+
+    </aside>
+
+  </section>
+
+  <footer>
+
+    <h3>Electric Castle Journal © 2026</h3>
+
+    <p>
+      Created for music lovers and unforgettable festival memories.
+    </p>
+
+  </footer>
+
+</body>
+</html>
